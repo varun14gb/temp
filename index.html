@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Mirrored from xvelopers.com/demos/html/paper-panel1.0.8/panel-page-dashboard5.html by HTTrack Website Copier/3.x [XR&CO'2017], Thu, 26 Dec 2019 09:58:23 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
+    <title>Paper</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/app.css">
+    <style>
+        .loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F5F8FA;
+            z-index: 9998;
+            text-align: center;
+        }
+
+        .plane-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+    <!-- Js -->
+    <!--
+    --- Head Part - Use Jquery anywhere at page.
+    --- http://writing.colin-gourlay.com/safely-using-ready-before-including-jquery/
+    -->
+    <script>(function (w, d, u) { w.readyQ = []; w.bindReadyQ = []; function p(x, y) { if (x == "ready") { w.bindReadyQ.push(y); } else { w.readyQ.push(x); } }; var a = { ready: p, bind: p }; w.$ = w.jQuery = function (f) { if (f === d || f === u) { return a } else { p(f) } } })(window, document)</script>
+</head>
+
+<body class="light">
+    <!-- Pre loader -->
+    <div id="loader" class="loader">
+        <div class="plane-container">
+            <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="app">
+        <script>
+            /*
+             *  Add sidebar classes (sidebar-offcanvas-desktop) in body tag
+             *  you can remove this script tag and add classes directly to body
+             *  this is only for demo
+             */
+            document.body.className += ' sidebar-collapse' + ' sidebar-offCanvas-lg';
+        </script>
+        <aside class="main-sidebar fixed offcanvas shadow" data-toggle='offcanvas'>
+            <section class="sidebar">
+                <div class="w-80px mt-3 mb-3 ml-3">
+                    <img src="assets/img/basic/logo.png" alt="">
+                </div>
+                <div class="relative">
+                    <a data-toggle="collapse" href="#userSettingsCollapse" role="button" aria-expanded="false"
+                        aria-controls="userSettingsCollapse"
+                        class="btn-fab btn-fab-sm absolute fab-right-bottom fab-top btn-primary shadow1 ">
+                        <i class="icon icon-cogs"></i>
+                    </a>
+                    <div class="user-panel p-3 light mb-2">
+                        <div>
+                            <div class="float-left image">
+                                <img class="user_avatar" src="assets/img/dummy/u2.png" alt="User Image">
+                            </div>
+                            <div class="float-left info">
+                                <h6 class="font-weight-light mt-2 mb-1">Alexander Pierce</h6>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="collapse multi-collapse" id="userSettingsCollapse">
+                            <div class="list-group mt-3 shadow">
+                                <a href="index-2.html" class="list-group-item list-group-item-action ">
+                                    <i class="mr-2 icon-umbrella text-blue"></i>Profile
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action"><i
+                                        class="mr-2 icon-cogs text-yellow"></i>Settings</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="index.html" class="list-group-item list-group-item-action ">
+                            <i class="mr-2 icon-box text-blue"></i>Ad Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard2.html" class="list-group-item list-group-item-action ">
+                            <i class="mr-2 icon-box text-blue"></i>Page Dashboard
+                        </a>
+                    </li>
+                   <li>
+                        <a href="addad.html" class="list-group-item list-group-item-action ">
+                            <i class="mr-2 icon-target text-blue"></i>Add ad
+                        </a>
+                    </li>
+                    <li>
+                        <a href="budget.html" class="list-group-item list-group-item-action ">
+                            <i class="mr-2 icon-money text-blue"></i>Set Budget
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="list-group-item list-group-item-action ">
+                            <i class="mr-2 icon-bolt text-blue"></i>Performance
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <!--Sidebar End-->
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark pt-2 pb-2 pl-4 pr-2">
+                    <div class="search-bar">
+                        <input class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50" type="text"
+                            placeholder="start typing...">
+                    </div>
+                    <a href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-expanded="false"
+                        aria-label="Toggle navigation" class="paper-nav-toggle paper-nav-white active "><i></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="page">
+            <header class="indigo lighten-2 relative shadow pb-5">
+                <div class="navbar navbar-expand navbar-dark d-flex justify-content-between bd-navbar">
+                    <div class="relative">
+                        <a href="#" data-toggle="push-menu" class="paper-nav-toggle pp-nav-toggle paper-nav-white">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="container text-white pb-5">
+                    <div class="mb-4">
+                        <h4>
+                            <i class="icon-box"></i>
+                            Ad Dashboard
+                        </h4>
+                    </div>
+                </div>
+            </header>
+            <div class="container relative animatedParent animateOnce pull-up-lg">
+                <div class="animated fadeInUpShort my-3 mb-5">
+                    <div class="card my-3">
+                        <div class="card-header white">
+                            <h4> Your Ads </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="lightSlider service-blocks " data-item="3" data-item-md="2" data-item-sm="1"
+                                data-auto="false" data-loop="true" data-pager="false">
+                                <div>
+                                    <div class="service-block center paper-block">
+                                        <div class="service-content">
+                                            <h5><a href="#">Paper Service Heading</a></h5>
+                                            <p>Dynamically leverage existing synergistic systems whereas future-proof
+                                                sources Synergistically formulate</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="service-block center paper-block">
+                                        <div class="service-content">
+                                            <h5><a href="#">Paper Service Heading</a></h5>
+                                            <p>Dynamically leverage existing synergistic systems whereas future-proof
+                                                sources Synergistically formulate</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="service-block center paper-block">
+                                        <div class="service-content">
+                                            <h5><a href="#">Paper Service Heading</a></h5>
+                                            <p>Dynamically leverage existing synergistic systems whereas future-proof
+                                                sources Synergistically formulate</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters my-1 white">
+                        <div class="col-md-8 b-r">
+                            <div class=" card no-b ">
+                                <div class="card-body">
+                                    <div class="row text-center mb-3">
+                                        <div class="col-md-4">
+                                            <h5>Impressions <span class="red-text">+203</span></h5>
+                                            <span class="s-24">2000</span>
+                                        </div>
+                                        <div class="col-md-4 b-r">
+                                            <div>
+                                                <h5>Clicks <span class="green-text">+20</span></h5>
+                                                <span class="s-24">120</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div>
+                                                <h5>Reach <span class="amber-text">+120</span></h5>
+                                                <span class="s-24">900</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="height: 450px">
+                                        <canvas data-chart="line"
+                                            data-dataset="[[20, 24, 32, 34, 38, 35, 37, 40, 53, 60, 62],[48, 54, 53, 58, 56, 62, 61, 59, 76, 78, 80],[12, 16, 40, 60, 50, 40, 6, 9, 20, 48, 65]]"
+                                            data-labels="['1', '4', '7', '10', '13', '16', '19', '22', '25', '28', '31']"
+                                            data-dataset-options="datasets: [{
+                                        label: 'Impressions',
+                                        fill: !0,
+                                        lineTension: 0,
+                                        backgroundColor: 'rgba(0,172,255, 0.1)',
+                                        borderWidth: 2,
+                                        borderColor: '#00AAFF',
+                                        borderCapStyle: 'butt',
+                                        borderDash: [],
+                                        borderDashOffset: 0,
+                                        borderJoinStyle: 'miter',
+                                        pointRadius: 4,
+                                        pointBorderColor: '#00AAFF',
+                                        pointBackgroundColor: '#fff',
+                                        pointBorderWidth: 2,
+                                        pointHoverRadius: 6,
+                                        pointHoverBackgroundColor: '#fff',
+                                        pointHoverBorderColor: '#00AAFF',
+                                        pointHoverBorderWidth: 2,
+                                        data: [20, 24, 32, 34, 38, 35, 37, 40, 53, 60, 62],
+                                        spanGaps: !1
+                                    }, {
+                                        label: 'Clicks',
+                                        fill: !0,
+                                        lineTension: 0,
+                                        backgroundColor: 'rgba(163,136,227, 0.1)',
+                                        borderWidth: 2,
+                                        borderColor: '#886CE6',
+                                        pointRadius: 4,
+                                        pointBorderColor: '#886CE6',
+                                        pointBackgroundColor: '#fff',
+                                        pointBorderWidth: 2,
+                                        pointHoverRadius: 6,
+                                        pointHoverBackgroundColor: '#fff',
+                                        pointHoverBorderColor: '#886CE6',
+                                        pointHoverBorderWidth: 2,
+                                        data: [48, 54, 53, 58, 56, 62, 61, 59, 76, 78, 80],
+                                        spanGaps: !1
+                                    }, {
+                                        label: 'Reach',
+                                        fill: !0,
+                                        lineTension: 0,
+                                        backgroundColor: 'rgba(219, 64, 64, 0.1)',
+                                        borderWidth: 2,
+                                        borderColor: '#db4040',
+                                        pointRadius: 4,
+                                        pointBorderColor: '#db4040',
+                                        pointBackgroundColor: '#fff',
+                                        pointBorderWidth: 2,
+                                        pointHoverRadius: 6,
+                                        pointHoverBackgroundColor: '#fff',
+                                        pointHoverBorderColor: '#db4040',
+                                        pointHoverBorderWidth: 2,
+                                        data: [12, 16, 40, 60, 50, 40, 6, 9, 20, 48, 65],
+                                        spanGaps: !1
+                                    }]" data-options="{
+                                    legend: {
+                                        display: !0,
+                                        labels: {
+                                            fontColor: '#7F8FA4',
+                                            fontFamily: 'Source Sans Pro, sans-serif',
+                                            boxRadius: 4,
+                                            usePointStyle: !0
+                                        }
+                                    },
+                                    layout: {
+                                        padding: {
+                                            left: 0,
+                                            right: 0,
+                                            top: 0,
+                                            bottom: 0
+                                        }
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            display: !0,
+                                            ticks: {
+                                                fontSize: '11',
+                                                fontColor: '#969da5'
+                                            },
+                                            gridLines: {
+                                                color: 'rgba(0,0,0,0.0)',
+                                                zeroLineColor: 'rgba(0,0,0,0.0)'
+                                            }
+                                        }],
+                                        yAxes: [{
+                                            display: !0,
+                                            gridLines: {
+                                                color: 'rgba(223,226,229,0.45)',
+                                                zeroLineColor: 'rgba(0,0,0,0.0)'
+                                            },
+                                            ticks: {
+                                                beginAtZero: !0,
+                                                max: 100,
+                                                stepSize: 25,
+                                                fontSize: '11',
+                                                fontColor: '#969da5'
+                                            }
+                                        }]
+                                    }
+                                }">
+                                        </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card no-b p-2">
+                                <div class="card-header">
+                                    <h3>Traffic By OS</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div style="height: 300px">
+                                        <canvas
+                                                data-chart="chartJs"
+                                                data-chart-type="doughnut"
+                                                data-dataset="[
+                                                                    [75, 25,25],
+            
+                                                                ]"
+                                                data-labels="[['Android'],['IOS'],['Windows'],['Others']]"
+                                                data-dataset-options="[
+                                                                {
+                                                                    label: 'Disk',
+                                                                    backgroundColor: [
+                                                                        '#03a9f4',
+                                                                        '#8f5caf',
+                                                                        '#3f51b5'
+                                                                    ],
+            
+                                                                },
+                                                                ]"
+                                                data-options="{legend: {display: !0,position: 'bottom',labels: {fontColor: '#7F8FA4',usePointStyle: !0}},
+                                            }"
+                                        >
+                                        </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-md-6">
+                            <div class="card no-b p-3">
+                                <div class="card-header">
+                                    <h3>Average Session</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div style="height: 450px">
+                                        <canvas
+                                                data-chart="line"
+                                                data-dataset="[[0,528,228,728,528,1628,0]]"
+                                                data-labels="['Blue','Yellow','Green','Purple','Orange','Red','Indigo']"
+                                                data-dataset-options="[{ label:'Session', borderColor:  'rgba(255,99,132,1)', backgroundColor: 'rgba(255, 99, 132, 0.2)'}]">
+                                        </canvas>
+                                    </div>
+                                    <div class="text-center p-2">
+                                        <h3>Average Session</h3>
+                                        <h5><i class="icon-angle-double-up text-green mr-2"></i>1,11,5</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-md-6 no-gutters">
+                            <div class="col-md-12 paper-card  p-3">
+                                <div class="box-header card-header with-border">
+                                    <h3 class="box-title">Tasks</h3>
+                                </div>
+                                <div class="box-body card-body">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Task</th>
+                                            <th>Progress</th>
+                                            <th style="width: 40px">%</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>Update software</td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge text-white bg-red">55%</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td>Clean database</td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge text-white bg-yellow">70%</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td>Cron job running</td>
+                                            <td>
+                                                <div class="progress progress-xs progress-striped active">
+                                                    <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge text-white bg-light-blue">30%</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4.</td>
+                                            <td>Fix and squish bugs</td>
+                                            <td>
+                                                <div class="progress progress-xs progress-striped active">
+                                                    <div class="progress-bar progress-bar-success" style="width: 90%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge text-white bg-green">90%</span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header white">
+                                        <strong> Top Performing Ad </strong>
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- Big Heading -->
+                                        <div class="text-center">
+                                            <h3 class="my-3">Ad Title</h3>
+                                            <i class="icon-angle-double-up yellow avatar avatar-lg"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p>
+                                                    <i class="icon-circle-o text-red mr-2"></i>Clicks
+                                                </p>
+                                                <p>
+                                                    <i class="icon-circle-o text-green mr-2"></i>Impressions
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    <i class="icon-angle-double-down text-red mr-2"></i>1,4,348
+                                                </p>
+                                                <p>
+                                                    <i class="icon-angle-double-up text-green mr-2"></i>1,11,5
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="card col-12">
+                            <div class="card-header white">
+                                <h3 class="pt-2">Visitors By Location</h3>
+                            </div>
+                            <div class="row p-3 card-body">
+                                <div class="col-md-6">
+                                    <div class="jvmap"
+                                        data-options='{"map":"world_en","backgroundColor":null,"color":"#4285f4","hoverOpacity":0.7,"selectedColor":"#36a2eb","enableZoom":true,"showTooltip":true,"values":"sample_data","scaleColors":["#E6F2F0","#149B7E"],"normalizeFunction":"polynomial"}'
+                                        style="height:300px;"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body pt-0">
+                                        <h6>Top Countries</h6>
+                                        <div class="my-3">
+                                            <div class="float-right">
+                                                <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                    <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                </a>
+                                                <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                    <i class="icon-star p-0"></i>
+                                                </a>
+                                            </div>
+                                            <div class="mr-3 float-left">
+                                                <i class="icon-angle-double-up bg-primary text-center avatar mt-1"></i>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <strong>United Kingdom</strong>
+                                                </div>
+                                                <small>5000+ Visitor in a month</small>
+                                            </div>
+                                        </div>
+                                        <div class="my-3">
+                                            <small>25% US Visitors</small>
+                                            <div class="progress" style="height: 3px;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="my-3">
+                                            <small>45% UK Visitors</small>
+                                            <div class="progress" style="height: 3px;">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: 45%;" aria-valuenow="45"
+                                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="my-3">
+                                            <small>60% Complete</small>
+                                            <div class="progress" style="height: 3px;">
+                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 60%;" aria-valuenow="60"
+                                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="my-3">
+                                            <small>75% Complete</small>
+                                            <div class="progress" style="height: 3px;">
+                                                <div class="progress-bar bg-danger" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="my-3">
+                                            <small>100% Complete</small>
+                                            <div class="progress" style="height: 3px;">
+                                                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100"
+                                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <!--/#app -->
+    <script src="assets/js/app.js"></script>
+    <!--
+--- Footer Part - Use Jquery anywhere at page.
+--- http://writing.colin-gourlay.com/safely-using-ready-before-including-jquery/
+-->
+    <script>(function ($, d) { $.each(readyQ, function (i, f) { $(f) }); $.each(bindReadyQ, function (i, f) { $(d).bind("ready", f) }) })(jQuery, document)</script>
+</body>
+
+<!-- Mirrored from xvelopers.com/demos/html/paper-panel1.0.8/panel-page-dashboard5.html by HTTrack Website Copier/3.x [XR&CO'2017], Thu, 26 Dec 2019 09:58:33 GMT -->
+
+</html>
